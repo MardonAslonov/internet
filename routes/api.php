@@ -11,10 +11,12 @@ use App\Http\Controllers\API\ProductController;
 //     return $request->user();
 // });
 
-Route::get('salom', [RegisterController::class, 'salom']);
-Route::post('register', [RegisterController::class, 'register']);
-Route::post('login', [RegisterController::class, 'login']);
 
-Route::middleware('auth:api')->group( function () {
-    Route::resource('products', ProductController::class);
-});
+Route::post('refresh', [RegisterController::class, 'refresh']);
+Route::post('login', [RegisterController::class, 'login']);
+Route::post('salom', [RegisterController::class, 'salom']);
+
+
+// Route::middleware('auth:api')->group( function () {
+//     Route::resource('products', ProductController::class);
+// });
